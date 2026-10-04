@@ -3,12 +3,10 @@
 <head>
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
 <style>
 *{
   box-sizing:border-box;
 }
-
 html,
 body{
   margin:0;
@@ -17,7 +15,6 @@ body{
   height:100%;
   background:#1c1c1e;
 }
-
 body{
   font-family:
     -apple-system,
@@ -25,89 +22,68 @@ body{
     "SF Pro Display",
     "Helvetica Neue",
     sans-serif;
-
   -webkit-tap-highlight-color:transparent;
 }
-
 .app{
   width:100%;
   height:100%;
-
   display:flex;
-  align-items:center;
+  align-items:flex-end;
   justify-content:center;
-
-  padding:16px;
+  /* 下から少し上げて指が届きやすい位置にする */
+  padding:
+    16px
+    16px
+    calc(90px + env(safe-area-inset-bottom));
 }
-
 .button-area{
   width:100%;
   max-width:360px;
-
   display:grid;
   grid-template-columns:1fr 1fr;
-
   gap:8px;
-
   padding:12px;
-
   background:#2c2c2e;
-
   border-radius:20px;
-
   box-shadow:
     0 8px 30px rgba(0,0,0,.35);
 }
-
 .quick-button{
   min-height:72px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   border-radius:14px;
-
   background:#3a3a3c;
-
   color:#fff;
-
   text-decoration:none;
-
   font-size:15px;
   font-weight:600;
-
   user-select:none;
   -webkit-user-select:none;
-
   transition:
     transform .12s ease,
     background .15s ease;
 }
-
 .quick-button:active{
   transform:scale(.95);
   background:#48484a;
 }
-
 .button-content{
   display:flex;
   align-items:center;
   justify-content:center;
 }
-
 @media(max-width:360px){
-
   .app{
     padding-left:12px;
     padding-right:12px;
+    padding-bottom:calc(82px + env(safe-area-inset-bottom));
   }
-
   .button-area{
     padding:10px;
     gap:7px;
   }
-
   .quick-button{
     min-height:64px;
     font-size:14px;
@@ -115,13 +91,9 @@ body{
 }
 </style>
 </head>
-
 <body>
-
 <div class="app">
-
   <div class="button-area">
-
     <a
       class="quick-button"
       href="shortcuts://run-shortcut?name=Quick%20Silence">
@@ -129,7 +101,6 @@ body{
         Silence
       </span>
     </a>
-
     <a
       class="quick-button"
       href="shortcuts://run-shortcut?name=Quick%20Workout">
@@ -137,7 +108,6 @@ body{
         Workout
       </span>
     </a>
-
     <a
       class="quick-button"
       href="shortcuts://run-shortcut?name=Quick%20News">
@@ -145,7 +115,6 @@ body{
         News
       </span>
     </a>
-
     <a
       class="quick-button"
       href="shortcuts://run-shortcut?name=Quick%20Cokeon">
@@ -153,10 +122,7 @@ body{
         Coke on
       </span>
     </a>
-
   </div>
-
 </div>
-
 </body>
 </html>
