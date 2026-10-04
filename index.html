@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-
-<meta charset="UTF-8">
-
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>Quick Panel</title>
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <style>
-
 *{
   box-sizing:border-box;
 }
@@ -20,10 +13,8 @@ html,
 body{
   margin:0;
   padding:0;
-
   width:100%;
   height:100%;
-
   background:#1c1c1e;
 }
 
@@ -38,13 +29,11 @@ body{
   -webkit-tap-highlight-color:transparent;
 }
 
-.panel{
-
+.app{
   width:100%;
   height:100%;
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 
@@ -52,14 +41,11 @@ body{
 }
 
 .button-area{
-
   width:100%;
-  max-width:420px;
+  max-width:360px;
 
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
+  grid-template-columns:1fr 1fr;
 
   gap:8px;
 
@@ -74,11 +60,9 @@ body{
 }
 
 .quick-button{
-
   min-height:72px;
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 
@@ -91,7 +75,6 @@ body{
   text-decoration:none;
 
   font-size:15px;
-
   font-weight:600;
 
   user-select:none;
@@ -103,15 +86,19 @@ body{
 }
 
 .quick-button:active{
-
   transform:scale(.95);
-
   background:#48484a;
+}
+
+.button-content{
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 @media(max-width:360px){
 
-  .panel{
+  .app{
     padding-left:12px;
     padding-right:12px;
   }
@@ -125,24 +112,46 @@ body{
     min-height:64px;
     font-size:14px;
   }
-
 }
-
 </style>
-
 </head>
 
 <body>
 
-<div class="panel">
+<div class="app">
 
   <div class="button-area">
 
     <a
       class="quick-button"
-      href="shortcuts://run-shortcut?name=Quick%20Test"
-    >
-      TEST
+      href="shortcuts://run-shortcut?name=Quick%20Silence">
+      <span class="button-content">
+        Silence
+      </span>
+    </a>
+
+    <a
+      class="quick-button"
+      href="shortcuts://run-shortcut?name=Quick%20Workout">
+      <span class="button-content">
+        Workout
+      </span>
+    </a>
+
+    <a
+      class="quick-button"
+      href="shortcuts://run-shortcut?name=Quick%20News">
+      <span class="button-content">
+        News
+      </span>
+    </a>
+
+    <a
+      class="quick-button"
+      href="shortcuts://run-shortcut?name=Quick%20Cokeon">
+      <span class="button-content">
+        Coke on
+      </span>
     </a>
 
   </div>
@@ -150,5 +159,4 @@ body{
 </div>
 
 </body>
-
 </html>
