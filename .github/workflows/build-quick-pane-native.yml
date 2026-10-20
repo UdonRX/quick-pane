@@ -7,6 +7,12 @@ on:
     paths:
       - "ios-prototype/**"
       - ".github/workflows/build-quick-pane-native.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "ios-prototype/**"
+      - ".github/workflows/build-quick-pane-native.yml"
   workflow_dispatch:
 
 permissions:
