@@ -1,0 +1,48 @@
+name: QuickPaneNative
+options:
+  bundleIdPrefix: com.udonrx.quickpane
+  deploymentTarget:
+    iOS: "18.2"
+  createIntermediateGroups: true
+
+targets:
+  QuickPaneNative:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+    dependencies:
+      - target: QuickPaneCaptureExtension
+        embed: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.udonrx.quickpane.native
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: YES
+    info:
+      properties:
+        CFBundleDisplayName: Quick Pane
+        NSCameraUsageDescription: "Quick Pane's camera extension uses the camera interface required by iOS Camera Control integration."
+        UILaunchScreen: {}
+
+  QuickPaneCaptureExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: CaptureExtension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.udonrx.quickpane.native.capture
+        PRODUCT_NAME: QuickPaneCaptureExtension
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        APPLICATION_EXTENSION_API_ONLY: YES
+        SKIP_INSTALL: YES
+        GENERATE_INFOPLIST_FILE: YES
+    info:
+      properties:
+        EXAppExtensionAttributes:
+          EXExtensionPointIdentifier: com.apple.securecapture
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
