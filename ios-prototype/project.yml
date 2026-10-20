@@ -19,12 +19,8 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.udonrx.quickpane.native
         SWIFT_VERSION: "5.0"
         TARGETED_DEVICE_FAMILY: "1"
-        GENERATE_INFOPLIST_FILE: YES
-    info:
-      properties:
-        CFBundleDisplayName: Quick Pane
-        NSCameraUsageDescription: "Quick Pane's camera extension uses the camera interface required by iOS Camera Control integration."
-        UILaunchScreen: {}
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: App/Info.plist
 
   QuickPaneCaptureExtension:
     type: app-extension
@@ -39,10 +35,5 @@ targets:
         TARGETED_DEVICE_FAMILY: "1"
         APPLICATION_EXTENSION_API_ONLY: YES
         SKIP_INSTALL: YES
-        GENERATE_INFOPLIST_FILE: YES
-    info:
-      properties:
-        EXAppExtensionAttributes:
-          EXExtensionPointIdentifier: com.apple.securecapture
-        UISupportedInterfaceOrientations:
-          - UIInterfaceOrientationPortrait
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: CaptureExtension/Info.plist
